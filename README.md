@@ -75,7 +75,3 @@ You can easily adjust the CSS to fit your needs:
 
 *   This CSS assumes the standard HTML structure output by the YARPP Thumbnails template. If YARPP updates and changes its HTML structure or class names significantly, this custom CSS might need adjustments.
 *   Always test changes on a staging site before applying them to your live website.
-
-## License
-
-(Optional: Add a license if you plan to share this publicly, e.g., MIT License)

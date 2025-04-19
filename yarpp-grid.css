@@ -1,0 +1,86 @@
+/* YARPP */
+/* Add this to your child theme css and remember to disable the default yarpp css */
+.yarpp-related {
+  margin-bottom: 1em;
+  margin-top: 1em;
+  /* Ensure this container respects its parent's width */
+  max-width: 100%;
+  box-sizing: border-box; /* Include padding/border in width */
+}
+
+/* --- Heading Style --- */
+.yarpp-related h3 {
+  font-size: 125%;
+  font-weight: 700;
+  margin: 0 0 1em; /* Add space below heading, above grid */
+  padding: 0;
+  text-transform: capitalize;
+  box-sizing: border-box; /* Just in case */
+}
+
+/* --- Grid Container --- */
+/* This is the div holding the <a> tags */
+.yarpp-thumbnails-horizontal {
+  display: grid;
+  /* Desktop: 4 columns, allowing them to shrink */
+  grid-template-columns: repeat(4, minmax(0, 1fr)); /* Use minmax */
+  /* Gap between grid items */
+  gap: 1.5em; /* Adjust as needed */
+  /* Ensure this container respects its parent's width */
+  max-width: 100%;
+  box-sizing: border-box; /* Include padding/border in width */
+  /* Override potential inline styles from the plugin */
+  text-align: left !important; /* Override the inline style if present */
+  /* Optional: If it STILL overflows, uncomment below */
+  /* overflow: hidden; */
+}
+
+/* --- Grid Items (the <a> links) --- */
+.yarpp-thumbnails-horizontal .yarpp-thumbnail {
+  display: block; /* Make the link a block element */
+  text-decoration: none; /* Remove underline from the whole block */
+  color: inherit; /* Inherit text color */
+  overflow: hidden; /* Prevent content spillover */
+  box-sizing: border-box; /* Include padding/border in width */
+  /* Optional: Add borders, background, padding to the item */
+  /* background-color: #f9f9f9; */
+  /* border: 1px solid #eee; */
+  /* padding: 0.5em; */
+}
+
+/* --- Images within Grid Items --- */
+.yarpp-thumbnails-horizontal .yarpp-thumbnail img {
+  max-width: 100%; /* Make image responsive */
+  height: auto;    /* Maintain aspect ratio */
+  display: block;  /* Remove extra space below image */
+  margin-bottom: 0.5em; /* Space between image and title */
+}
+
+/* --- Title within Grid Items --- */
+.yarpp-thumbnails-horizontal .yarpp-thumbnail .yarpp-thumbnail-title {
+  font-size: 96%;
+  font-weight: 700;
+  text-align: left;
+  text-decoration: none; /* Redundant if parent <a> has it, but safe */
+  display: block; /* Ensure title takes its own line */
+  /* Optional: Add padding if needed */
+  /* padding: 0 0.5em 0.5em; */ /* Example padding if item has bg/border */
+}
+
+
+/* --- Responsive Adjustments for Mobile --- */
+@media (max-width: 768px) { /* Adjust breakpoint as needed */
+  .yarpp-thumbnails-horizontal {
+	/* Mobile: 2 columns, allowing them to shrink */
+	grid-template-columns: repeat(2, minmax(0, 1fr)); /* Use minmax */
+	gap: 1em; /* Adjust gap for mobile */
+  }
+}
+
+/* Optional: Further adjustments for very small screens */
+@media (max-width: 480px) {
+  .yarpp-thumbnails-horizontal {
+	grid-template-columns: minmax(0, 1fr); // Use minmax
+	gap: 1.5em;
+  }
+}
